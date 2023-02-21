@@ -1,0 +1,46 @@
+
+.main-title{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+
+  &__text {
+    font-family:fantasy
+  }
+}
+
+.main-header {
+  display:flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+}
+
+.home-icon{
+  margin-bottom: 15px;
+}
+
+.toolbar{
+  display: flex;
+  justify-content: space-between;
+  background-color: white	;
+}
+
+.toolbar__first-container{
+  display: flex;
+  justify-content:flex-start;
+  width:250px;
+}
+
+.toolbar__first-container__text{
+  display: flex;
+  justify-content: center;
+  padding-top:9px;
+
+  &-font{
+    font-family:'Courier New', Courier, monospace;
+  }
+}
+
+
+
+

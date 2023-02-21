@@ -1,0 +1,29 @@
+<div class="button-back">
+<button mat-stroked-button	routerLink="..">Back</button>
+</div>
+
+
+<app-loader *ngIf="isLoading" class="loader"></app-loader>
+
+
+ <!--Drink List container-->
+  <div class="drink-list"  *ngIf="!isLoading">
+    <div class="drink-list__paginator">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  <div class="drink-list__container">
+   <div class="drink-list__item" *ngFor="let drink of drinkList | paginate: { itemsPerPage: count, currentPage: p }">
+    <div class="drink-list__title-container">
+      <h4 class="drink-list__title">{{drink.strDrink}}</h4>
+    </div>
+      <img mat-card-image class="drink-list__image" [src]="drink.strDrinkThumb" alt="drink image">
+      <button mat-stroked-button [routerLink]="['details', drink.idDrink]">See Details</button>
+    </div>
+  </div>
+      <!--Pagination control-->
+      <div class="drink-list__paginator">
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+  </div>
+
+

@@ -1,0 +1,35 @@
+<div class="button-back">
+  <button mat-stroked-button routerLink="..">Back</button>
+</div>
+
+
+<div class="search-bar">
+  <input type="text" placeholder="Find your drink" (keyup)="getDrinks($event)">
+  <button mat-stroked-button	(click)="findDrinks(false)">Search</button>
+</div>
+
+
+<div *ngIf="showImage" class="search-bar__image-container">
+  <h1>Search your drink by name</h1>
+  <img class="search-bar__image" src="https://cdn.diffords.com/contrib/encyclopedia/2018/12/5c0fc829dd5ba.jpg" alt="">
+</div>
+
+<app-loader class="loader" *ngIf="isLoading">loading...</app-loader>
+
+<div class="show-bar__container" *ngIf="!isLoading">
+
+  <h2 *ngIf="!this.drinkItems">Already drunk? Please try again...</h2>
+
+  <div *ngIf="this.drinkItems === undefined">
+    <h2>You didn´t type anyth</h2>
+    <img src="../../../../../assets/italian-hand-gesture.jpg" alt="failure">
+  </div>
+
+  <div class="show-bar__item" *ngFor="let item of drinkItems">
+    <div class="show-bar__title_container">
+      <h4 class="show-bar__title">{{item.strDrink}}</h4>
+    </div>
+    <img class="show-bar__image" [src]="item.strDrinkThumb" alt="drink image">
+    <button mat-stroked-button	[routerLink]="['details', item.idDrink]">See details</button>
+  </div>
+</div>

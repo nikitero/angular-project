@@ -1,0 +1,47 @@
+.button-back{
+  margin-top:50px;
+  display: flex;
+  justify-content: center;
+}
+
+.drink-list__container{
+  margin-top:50px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.drink-list__item{
+  width:250px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.drink-list__image{
+  width:auto;
+}
+
+.drink-list__paginator{
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+}
+
+.drink-list__title{
+
+
+  &-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+}
+

@@ -1,0 +1,21 @@
+
+<div class="drink_detail">
+
+  <div class="back_button">
+    <button mat-stroked-button routerLink="../../">Back</button>
+  </div>
+
+  <div class="drink_detail__container">
+    <div class="drink_detail__card" *ngFor="let drink of detailedDrink">
+      <h1>{{drink.strDrink}}</h1>
+      <p>{{drink.idDrink}}</p>
+      <p>Category: {{drink.strCategory}}</p>
+      <p>{{drink.strAlcoholic}}</p>
+      <img class="drink_detail__card-image" [src]="drink.strDrinkThumb" alt="drink image">
+    </div>
+  </div>
+
+</div>
+
+
+
