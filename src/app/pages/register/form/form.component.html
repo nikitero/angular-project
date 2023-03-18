@@ -1,1 +1,43 @@
-<p>form works!</p>
+
+<div class="register-form">
+<h2>Create your account:</h2>
+
+<div class="register-form__container">
+<form novalidate (ngSubmit)="onSubmit()"  [formGroup]="userRegisterForm">
+	<fieldset>
+    <label class="register-form__item" for="name">(*) Name:</label>
+    <input class="register-form__item" type="text" id="name" formControlName="name" />
+    <div class="register-form__error-container" *ngIf="!nameFormControl?.valid && nameFormControl?.dirty">
+      <p class="register-form__error-message" *ngIf="passwordFormControl?.errors?.['required']">
+        Mandatory Field
+      </p>
+    </div>
+</fieldset>
+
+	<fieldset>
+    <label class="register-form__item" for="password">(*) Password:</label>
+    <input class="register-form__item" type="password" id="password" formControlName="password" />
+    <div class="register-form__error-container" *ngIf="!passwordFormControl.valid && (userRegisterForm.get('password')?.dirty)">
+      <p class="register-form__error-message" *ngIf="passwordFormControl?.errors?.['required']">
+        Mandatory Field
+      </p>
+      <p class="register-form__error-message" *ngIf="passwordFormControl?.errors?.['minlength']">
+        Too short password
+      </p>
+    </div>
+  </fieldset>
+
+	<fieldset>
+    <label class="register-form__item" for="passwordRepeat">(*) Repeat password:</label>
+    <input class="register-form__item" type="password" id="passwordRepeat" formControlName="passwordRepeat" />
+    <div class="register-form__error-container" *ngIf="!passwordRepeatFormControl.valid && passwordRepeatFormControl?.dirty">
+      <p class="register-form__error-message" *ngIf="passwordRepeatFormControl?.errors?.['mustMatch']">
+        Passwords don´t match
+      </p>
+    </div>
+  </fieldset>
+
+	<button class="register-form__item" type="submit" [disabled]="!userRegisterForm.valid || submitted">Submit</button>
+</form>
+</div>
+</div>
