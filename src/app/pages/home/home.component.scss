@@ -9,10 +9,15 @@
 
 
 @media  (min-width:1300px) {
-  *{
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+
+  .main{
+    display: grid;
+    place-items: center;
+  }
+
+  .image-container{
+    display: grid;
+    place-items: center;
   }
 
   .main-image{
