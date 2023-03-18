@@ -7,6 +7,8 @@ import { FormComponent } from './form/form.component';
 //Forms
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+//Angular Material
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     CommonModule,
     RegisterRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    //Angular Material
+    MatButtonModule
   ]
 })
 export class RegisterModule { }
